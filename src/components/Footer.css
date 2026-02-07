@@ -1,42 +1,60 @@
 .footer {
     background-color: var(--text-primary);
     color: var(--white);
-    padding: 4rem 1.5rem 1.5rem;
+    padding: 3rem 1rem 1.5rem;
+    /* Reduced padding from 4rem */
     margin-top: auto;
+    font-size: 0.95rem;
+    /* Slightly smaller base font */
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 2rem;
-    padding-bottom: 3rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 2rem;
+    /* Reduced from 3rem */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    /* More subtle border */
+    max-width: 1140px;
+    /* Match container width */
+    margin: 0 auto;
 }
 
 .footer-company {
-    grid-column: span 5;
+    grid-column: span 4;
+    /* Reduced from 5 to balance layout */
+    padding-right: 1.5rem;
 }
 
 .footer-company h3 {
     color: var(--white);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    /* Tighter spacing */
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 .footer-company p {
-    color: var(--bg-accent);
-    line-height: 1.6;
-    max-width: 400px;
-    margin-bottom: 1.5rem;
+    color: #cadae3;
+    /* Better contrast than bg-accent */
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
 }
 
 .footer-links {
     grid-column: span 2;
+    /* Keep same */
 }
 
 .footer-links h4 {
     color: var(--white);
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 0.875rem;
+    /* Tighter */
+    font-size: 1rem;
 }
 
 .footer-links ul {
@@ -46,26 +64,34 @@
 }
 
 .footer-links li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+    /* Compact list */
 }
 
 .footer-links a {
-    color: var(--bg-accent);
+    color: #cadae3;
     transition: color 0.2s;
+    font-size: 0.9rem;
+    display: inline-block;
 }
 
 .footer-links a:hover {
     color: var(--white);
+    transform: translateX(2px);
+    /* Subtle hover hint */
 }
 
 .social-links {
     display: flex;
-    gap: 1rem;
+    gap: 0.875rem;
+    /* Tighter gap */
 }
 
 .social-links a {
-    color: var(--bg-accent);
-    transition: transform 0.2s;
+    color: #cadae3;
+    transition: all 0.2s;
+    display: flex;
+    /* alignment fix */
 }
 
 .social-links a:hover {
@@ -74,13 +100,15 @@
 }
 
 .footer-contact {
-    grid-column: span 3;
+    grid-column: span 4;
+    /* Increased from 3 */
 }
 
 .footer-contact h4 {
     color: var(--white);
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 0.875rem;
+    font-size: 1rem;
 }
 
 .footer-contact ul {
@@ -92,13 +120,19 @@
 .footer-contact li {
     display: flex;
     align-items: flex-start;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    color: var(--bg-accent);
+    gap: 0.75rem;
+    /* More breathing room for icons */
+    margin-bottom: 0.75rem;
+    color: #cadae3;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 .footer-contact .contact-icon {
-    margin-top: 2px;
+    color: var(--bg-accent);
+    margin-top: 1px;
+    /* Optical alignment */
+    flex-shrink: 0;
 }
 
 .footer-bottom {
@@ -106,24 +140,41 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 1.5rem;
-    font-size: 0.875rem;
-    color: var(--bg-accent);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    max-width: 1140px;
+    margin: 0 auto;
 }
 
 .legal-links {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
+.legal-links a {
+    color: inherit;
+    transition: color 0.2s;
+}
+
+.legal-links a:hover {
+    color: var(--white);
+}
+
+/* Responsive */
 @media (max-width: 1024px) {
     .footer-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .footer-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+
+    .footer-company,
+    .footer-contact {
+        grid-column: span 1;
+        padding-right: 0;
+    }
+
+    .footer-links {
+        grid-column: span 1;
     }
 }
 
@@ -131,12 +182,12 @@
     .footer-grid {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 2.5rem;
     }
 
-    .footer-company,
-    .footer-links,
-    .footer-contact {
-        grid-column: span 1;
+    .footer-bottom {
+        flex-direction: column-reverse;
+        gap: 1rem;
+        text-align: center;
     }
 }

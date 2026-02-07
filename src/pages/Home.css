@@ -1,6 +1,22 @@
+/* Shared Section Backgrounds */
+.section {
+    padding: 3.75rem 0;
+}
+
+.bg-light {
+    background-color: var(--bg-primary);
+}
+
+.bg-soft {
+    background-color: #F8F5F4;
+    /* Consistent soft background */
+}
+
+/* Hero Section Refinements */
 .hero {
     background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-    padding: 8rem 0;
+    padding: 6rem 0;
+    /* Reduced from 8rem */
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -9,139 +25,202 @@
 .hero-content {
     position: relative;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    /* Tighter grouping */
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+    font-size: 3.5rem;
+    /* Slightly larger for impact */
+    margin-bottom: 0.5rem;
     line-height: 1.1;
     color: var(--text-primary);
+    max-width: 900px;
+    letter-spacing: -0.02em;
 }
 
 .hero p {
     font-size: 1.25rem;
     max-width: 600px;
-    margin: 0 auto 2.5rem;
+    margin: 0;
+    /* Reset margin */
     color: var(--text-secondary);
+    line-height: 1.6;
 }
 
 .hero-actions {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin-top: 1rem;
+    /* Separate from text */
 }
 
+/* Section Header Standardisation */
 .section-header {
     text-align: center;
     margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .section-header h2 {
-    font-size: 2.25rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
 }
 
 .section-header p {
     color: var(--text-secondary);
     font-size: 1.125rem;
+    line-height: 1.6;
 }
 
 .view-all {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 0.5rem;
     color: var(--text-primary);
+    font-size: 0.95rem;
 }
 
+/* Card System Refinements */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    align-items: stretch;
+    /* Ensure equal height */
 }
 
 .card {
     background: var(--white);
     border-radius: var(--radius-lg);
     padding: 2rem;
-    box-shadow: var(--shadow-md);
-    transition: transform 0.2s;
+    /* Reduced inner padding */
+    box-shadow: var(--shadow-sm);
+    /* Lighter initial shadow */
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%;
+    /* Fill grid cell */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    /* Subtle border definition */
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
 }
 
+/* Focus Cards */
 .focus-card {
     text-align: center;
+    align-items: center;
 }
 
 .focus-card .icon-wrapper {
-    background: var(--bg-accent);
+    background: var(--bg-secondary);
+    /* Soft blush */
     color: var(--text-primary);
-    width: 64px;
-    height: 64px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
+.focus-card h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.35rem;
+    /* Balanced size */
+}
+
+.focus-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Events Section Refinements */
 .event-card {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
+    flex-direction: row;
+    padding: 2rem;
+    gap: 2rem;
+    /* increased gap */
+    align-items: center;
 }
 
 .event-date {
-    background: var(--text-primary);
-    color: var(--white);
+    background: var(--bg-secondary);
+    /* Soft background instead of solid color */
+    color: var(--text-primary);
     padding: 1rem;
     border-radius: var(--radius-md);
     text-align: center;
-    min-width: 80px;
+    min-width: 90px;
+    flex-shrink: 0;
 }
 
 .event-date .day {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 700;
     line-height: 1;
+    margin-bottom: 0.25rem;
 }
 
 .event-date .month {
     display: block;
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+}
+
+.event-details {
+    flex: 1;
+    /* Take remaining space */
 }
 
 .event-details h3 {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     margin-bottom: 0.5rem;
+    line-height: 1.3;
 }
 
 .event-details p {
     font-size: 0.95rem;
     color: var(--text-secondary);
     margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
-.card-link {
-    font-size: 0.875rem;
-    font-weight: 600;
-    text-decoration: underline;
-    color: var(--text-primary);
+/* Events Section specific grid override */
+.events-section .card-grid {
+    grid-template-columns: repeat(2, 1fr);
 }
 
+/* News Section Refinements */
 .news-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    margin-top: 2rem;
+    gap: 2rem;
+    margin-top: 1rem;
 }
 
 .news-item {
@@ -151,11 +230,14 @@
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-sm);
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .news-image {
     background-color: var(--bg-accent);
-    height: 240px;
+    height: 260px;
+    /* Slightly taller */
     width: 100%;
 }
 
@@ -168,76 +250,90 @@
 }
 
 .news-content {
-    padding: 1.5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .news-date {
-    font-size: 0.875rem;
+    font-size: 0.825rem;
     color: var(--text-secondary);
-    display: block;
-    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
 }
 
 .news-content h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-}
-
-.read-more {
-    display: inline-block;
-    margin-top: 1rem;
-    font-weight: 500;
+    line-height: 1.3;
     color: var(--text-primary);
 }
 
+.news-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    margin-top: auto;
+}
+
+/* CTA Section Refinements */
 .cta-section {
     background: var(--text-primary);
     color: var(--white);
     text-align: center;
-    padding: 6rem 1.5rem;
+    padding: 5rem 0;
+    /* Reduced height */
 }
 
 .cta-section h2 {
     color: var(--white);
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     margin-bottom: 1rem;
+    letter-spacing: -0.01em;
 }
 
 .cta-section p {
-    font-size: 1.25rem;
-    color: var(--bg-accent);
-    margin-bottom: 2.5rem;
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    /* Lighter text for better contrast on dark bg */
+    margin-bottom: 2rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.btn-outline {
-    border: 2px solid var(--white);
-    background: transparent;
-    color: var(--white);
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--radius-md);
-    font-weight: 500;
-}
-
-.btn-outline:hover {
-    background: var(--white);
-    color: var(--text-primary);
-}
-
+/* Helper background classes */
 .bg-secondary {
     background-color: var(--bg-secondary);
 }
 
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+
+    /* Tablet */
+    .hero h1 {
+        font-size: 3rem;
+    }
+}
+
 @media (max-width: 768px) {
+
+    /* Mobile */
+    .hero {
+        padding: 4rem 1rem;
+    }
+
     .hero h1 {
         font-size: 2.25rem;
     }
@@ -245,9 +341,27 @@
     .card-grid,
     .news-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .event-card {
+        flex-direction: row;
+        /* Keep row layout on mobile if space allows, or column if too tight */
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-card {
         flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .event-date {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        align-items: baseline;
     }
 }

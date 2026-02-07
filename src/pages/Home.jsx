@@ -58,7 +58,7 @@ const Home = () => {
             </section>
 
             {/* Upcoming Events */}
-            <section className="section events-section">
+            <section className="section bg-soft events-section">
                 <div className="container">
                     <div className="section-header">
                         <h2>Upcoming Events</h2>
@@ -94,7 +94,7 @@ const Home = () => {
             </section>
 
             {/* Recent News */}
-            <section className="section bg-secondary">
+            <section className="section">
                 <div className="container">
                     <div className="section-header">
                         <h2>Latest News</h2>

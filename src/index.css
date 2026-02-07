@@ -3,19 +3,19 @@
   --bg-primary: #F3EEEB;
   --bg-secondary: #F1DEDC;
   --bg-accent: #DFD0CC;
-  
+
   --text-primary: #2A5A72;
   --text-secondary: #A79B9E;
-  
+
   --white: #ffffff;
   --black: #000000;
-  
+
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
 
   --font-sans: 'Inter', system-ui, sans-serif;
-  
+
   --radius-md: 0.375rem;
   --radius-lg: 0.5rem;
 }
@@ -29,7 +29,12 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--text-primary);
   font-weight: 600;
   line-height: 1.25;
@@ -79,11 +84,14 @@ a:hover {
 
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1140px;
+  /* Updated to 1140px */
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
+  /* Slightly tighter horizontal padding */
 }
 
 .section {
-  padding: 5rem 0;
+  padding: 3.75rem 0;
+  /* Reduced from 5rem by ~25% */
 }
